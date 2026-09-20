@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             const response = await fetch(`${API_CONFIG.BASE_URL}/api/Room/StartVoting`, {
                 method: 'POST',
-                headers: { 'Тип контента': 'application/json' },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ roomId: parseInt(roomId) })
             });
 
