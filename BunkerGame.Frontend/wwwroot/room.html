@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Бункер - Комната</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Special+Elite&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">ПОДКЛЮЧАЕМСЯ К БУНКЕРУ...</div>
+    </div>
+
+    <div class="room-header">
+        <button id="backBtn" class="back-btn">← Назад к меню</button>
+        <div class="room-info">
+            <h2 id="roomName">Название комнаты</h2>
+            <div class="room-code">Код: <span id="sessionCode">XXXXXX</span></div>
+            <div class="room-status">Статус: <span id="roomStatus">Ожидание</span></div>
+        </div>
+        <div class="player-info">
+            <span>Вы: <span id="playerNickname">Имя игрока</span></span>
+        </div>
+    </div>
+
+    <div class="room-container">
+        <div class="story-section">
+            <h3>📖 История</h3>
+            <div id="storyText" class="story-text"></div>
+        </div>
+
+        <div class="players-section">
+            <h3>👥 Игроки (<span id="playerCount">0</span>/<span id="maxPlayers">0</span>)</h3>
+            <div id="playersList" class="players-list"></div>
+        </div>
+
+        <div class="game-controls">
+            <button id="startGameBtn" class="game-btn" style="display:none;">Начать игру</button>
+            <button id="startVotingBtn" class="game-btn" style="display:none;">Начать голосование</button>
+            <button id="revealCharacteristicBtn" class="game-btn" style="display:none;">Раскрыть вашу характеристику</button>
+        </div>
+
+        <div id="votingSection" class="voting-section" style="display:none;">
+            <h3>🗳️ Раунд голосования #<span id="votingRoundNumber">1</span></h3>
+            <div id="votingStatus" class="voting-status"></div>
+            <div id="votingOptions" class="voting-options"></div>
+            <div id="votingResults" class="voting-results"></div>
+        </div>
+    </div>
+
+    <!-- Reveal Characteristic Modal -->
+    <div id="revealModal" class="modal" style="display:none;">
+        <div class="modal-content auth-modal">
+            <span class="close" id="closeRevealModal">&times;</span>
+            <h2>Раскрыть характеристику</h2>
+            <form id="revealForm">
+                <select id="playerSelect" required>
+                    <option value="">Выберите игрока</option>
+                </select>
+                <select id="characteristicSelect" required>
+                    <option value="">Выберите характеристику</option>
+                    <option value="gender">Пол</option>
+                    <option value="age">Возраст</option>
+                    <option value="orientation">Ориентация</option>
+                    <option value="hobby">Хобби</option>
+                    <option value="phobia">Фобия</option>
+                    <option value="luggage">Багаж</option>
+                    <option value="additionalinfo">Дополнительная информация</option>
+                    <option value="bodytype">Тип тела</option>
+                    <option value="health">Здоровье</option>
+                    <option value="personality">Личность</option>
+                </select>
+                <button type="submit" class="modal-btn">Раскрыть</button>
+            </form>
+            <div id="revealMessage" class="modal-message"></div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="room.js"></script>
+</body>
+</html> 

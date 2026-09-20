@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>БУНКЕР</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Special+Elite&display=swap" rel="stylesheet">
+    <script src="config.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">ЗАГРУЗКА БУНКЕРА...</div>
+    </div>
+
+    <div id="userPanel" class="user-panel">
+        <button id="loginBtn" class="login-top-btn">Login</button>
+        <!-- After login, nickname will appear here -->
+        <div id="userDropdown" class="user-dropdown" style="display:none;">
+            <button id="logoutBtn">Logout</button>
+        </div>
+    </div>
+    <div class="container">
+        <h1>BUNKER GAME</h1>
+        <div class="buttons">
+            <button id="createRoomBtn"> Создать комнату</button>
+            <button id="joinRoomBtn"> Присоединиться к комнате</button>
+            <button id="startGameBtn">Одиночная игра</button>
+            <button id="rulesBtn">Правила игры</button>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal" style="display:none;">
+        <div class="modal-content auth-modal">
+            <span class="close" id="closeLoginModal">&times;</span>
+            <h2 class="modal-title">Login</h2>
+            <form id="loginForm">
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>  
+                <input type="text" id="loginNickname" placeholder="Nickname" required>
+                <button type="submit" class="modal-btn">Login</button>
+            </form>
+            <p class="modal-switch">Нет аккаунта? <a href="#" id="showRegister">Зарегистрируйтесь сейчас</a></p>
+            <div class="modal-hint">Вы можете играть в Bunker как гость без регистрации.</div>
+            <div id="loginMessage" class="modal-message"></div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal" style="display:none;">
+        <div class="modal-content auth-modal">
+            <span class="close" id="closeRegisterModal">&times;</span>
+            <h2>Регистрация</h2>
+            <form id="registerForm">
+                <input type="email" id="registerEmail" placeholder="Email" required><br>
+                <input type="password" id="registerPassword" placeholder="Password" required><br> 
+                <input type="text" id="registerNickname" placeholder="Nickname" required><br>
+                <button type="submit" class="modal-btn">Register</button>
+            </form>
+            <p style="margin:10px 0 0 0;">Уже есть аккаунт? <a href="#" id="showLogin">Login</a></p>
+            <div style="margin-top:8px; color:#888; font-size:0.95em;">Вы можете играть в Bunker как гость без регистрации.</div>
+            <div id="registerMessage"></div>
+        </div>
+    </div>
+
+    <!-- Create Room Modal -->
+    <div id="createRoomModal" class="modal" style="display:none;">
+        <div class="modal-content auth-modal">
+            <span class="close" id="closeCreateRoomModal">&times;</span>
+            <h2>Создать комнату</h2>
+            <form id="createRoomForm">
+                <input type="text" id="roomName" placeholder="Name of the room" required>
+                <select id="maxPlayers" required>
+                    <option value="">Выберите максимальное количество игроков</option>
+                    <option value="5">5 игроков (2 победителя)</option>
+                    <option value="6">6 игроков (3 победителя)</option>
+                    <option value="7">7 игроков (3 победителя)</option>
+                    <option value="8">8 игроков (4 победителя)</option>
+                    <option value="9">9 игроков (4 победителя)</option>
+                    <option value="10">10 игроков (5 победителей)</option>
+                </select>
+                <input type="text" id="creatorNickname" placeholder="Your Nickname" required>
+                <div class="nickname-hint" id="creatorNicknameHint" style="display:none; color:#4CAF50; font-size:0.9em; margin-top:5px;">
+                    ✓ Using your logged-in nickname
+                </div>
+                <button type="submit" class="modal-btn">Create Room</button>
+            </form>
+            <div id="createRoomMessage" class="modal-message"></div>
+        </div>
+    </div>
+
+    <!-- Join Room Modal -->
+    <div id="joinRoomModal" class="modal" style="display:none;">
+        <div class="modal-content auth-modal">
+            <span class="close" id="closeJoinRoomModal">&times;</span>
+            <h2>Присоединиться к комнате</h2>
+            <form id="joinRoomForm">
+                <input type="text" id="sessionCode" placeholder="Session Code (6 characters)" required>
+                <input type="text" id="joinerNickname" placeholder="Your Nickname" required>
+                <div class="nickname-hint" id="joinerNicknameHint" style="display:none; color:#4CAF50; font-size:0.9em; margin-top:5px;">
+                    ✓ Using your logged-in nickname
+                </div>
+                <button type="submit" class="modal-btn">Присоединиться к комнате</button>
+            </form>
+            <div id="joinRoomMessage" class="modal-message"></div>
+        </div>
+    </div>
+
+   
+</body>
+</html>
