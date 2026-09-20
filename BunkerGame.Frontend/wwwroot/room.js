@@ -129,19 +129,20 @@ document.addEventListener('DOMContentLoaded', function() {
         const startVotingBtn = document.getElementById('startVotingBtn');
         const revealCharacteristicBtn = document.getElementById('revealCharacteristicBtn');
 
-        if (room.status === 'Ожидание') {
-            startGameBtn.style.display = 'block';
-            startVotingBtn.style.display = 'none';
-            revealCharacteristicBtn.style.display = 'block';
-        } else if (room.status === 'В игре') {
-            startGameBtn.style.display = 'none';
-            startVotingBtn.style.display = 'block';
-            revealCharacteristicBtn.style.display = 'block';
-        } else {
-            startGameBtn.style.display = 'none';
-            startVotingBtn.style.display = 'none';
-            revealCharacteristicBtn.style.display = 'none';
-        }
+    if (room.status === 'Waiting') {
+        startGameBtn.style.display = 'block';
+        startVotingBtn.style.display = 'none';
+        revealCharacteristicBtn.style.display = 'block';
+    } else if (room.status === 'Playing') {
+        startGameBtn.style.display = 'none';
+        startVotingBtn.style.display = 'block';
+        revealCharacteristicBtn.style.display = 'block';
+    } else {
+        startGameBtn.style.display = 'none';
+        startVotingBtn.style.display = 'none';
+        revealCharacteristicBtn.style.display = 'none';
+    }
+}
     }
 
     // Start Game
