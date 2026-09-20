@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
         revealCharacteristicBtn.style.display = 'none';
     }
 }
-    }
+    
 
     // Start Game
     document.getElementById('startGameBtn').addEventListener('click', async () => {
