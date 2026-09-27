@@ -860,12 +860,12 @@ body, .container, h1, h2, h3, h4, h5, h6, p, button, input, label, .rules-list, 
     align-items: center;
     padding: 20px;
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    border-bottom: 2px solid #ff6b35;
+    border-bottom: 2px solid #8b0000;
     color: #fff;
 }
 
 .back-btn {
-    background: #ff6b35;
+    background: #8b0000;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -876,12 +876,12 @@ body, .container, h1, h2, h3, h4, h5, h6, p, button, input, label, .rules-list, 
 }
 
 .back-btn:hover {
-    background: #e55a2b;
+    background: #8b0000;
 }
 
 .room-info h2 {
     margin: 0;
-    color: #ff6b35;
+    color: #8b0000;
     font-family: 'Special Elite', cursive;
 }
 
@@ -893,7 +893,7 @@ body, .container, h1, h2, h3, h4, h5, h6, p, button, input, label, .rules-list, 
 
 .player-info {
     font-family: 'Share Tech Mono', monospace;
-    color: #ff6b35;
+    color: #8b0000;
 }
 
 .room-container {
@@ -903,15 +903,15 @@ body, .container, h1, h2, h3, h4, h5, h6, p, button, input, label, .rules-list, 
 }
 
 .story-section {
-    background: rgba(255, 107, 53, 0.1);
-    border: 1px solid #ff6b35;
+    background: rgba(139, 0, 0, 0.1);
+    border: 1px solid #8b0000;
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 30px;
 }
 
 .story-section h3 {
-    color: #ff6b35;
+    color: #8b0000;
     margin-top: 0;
     font-family: 'Special Elite', cursive;
 }
@@ -928,7 +928,7 @@ body, .container, h1, h2, h3, h4, h5, h6, p, button, input, label, .rules-list, 
 }
 
 .players-section h3 {
-    color: #ff6b35;
+    color: #8b0000;
     font-family: 'Special Elite', cursive;
     margin-bottom: 20px;
 }
@@ -941,7 +941,7 @@ body, .container, h1, h2, h3, h4, h5, h6, p, button, input, label, .rules-list, 
 
 .player-card {
     background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-    border: 2px solid #ff6b35;
+    border: 2px solid #8b0000;
     border-radius: 10px;
     padding: 20px;
     transition: all 0.3s;
@@ -979,7 +979,7 @@ body, .container, h1, h2, h3, h4, h5, h6, p, button, input, label, .rules-list, 
 .player-name {
     font-size: 18px;
     font-weight: bold;
-    color: #ff6b35;
+    color: #8b0000;
     margin-bottom: 15px;
     font-family: 'Special Elite', cursive;
 }
@@ -988,7 +988,7 @@ body, .container, h1, h2, h3, h4, h5, h6, p, button, input, label, .rules-list, 
     font-family: 'Share Tech Mono', monospace;
     margin: 8px 0;
     padding: 5px 10px;
-    background: rgba(255, 107, 53, 0.1);
+    background: rgba(139, 0, 0, 0.1);
     border-radius: 5px;
     color: #fff;
 }
@@ -1001,7 +1001,7 @@ body, .container, h1, h2, h3, h4, h5, h6, p, button, input, label, .rules-list, 
 }
 
 .game-btn {
-    background: #ff6b35;
+    background: #8b0000;
     color: white;
     border: none;
     padding: 12px 24px;
@@ -1013,19 +1013,19 @@ body, .container, h1, h2, h3, h4, h5, h6, p, button, input, label, .rules-list, 
 }
 
 .game-btn:hover {
-    background: #e55a2b;
+    background: #8b0000;
 }
 
 .voting-section {
-    background: rgba(255, 107, 53, 0.1);
-    border: 1px solid #ff6b35;
+    background: rgba(139, 0, 0, 0.1);
+    border: 1px solid #8b0000;
     border-radius: 10px;
     padding: 20px;
     margin-top: 20px;
 }
 
 .voting-section h3 {
-    color: #ff6b35;
+    color: #8b0000;
     margin-top: 0;
     font-family: 'Special Elite', cursive;
 }
@@ -1054,13 +1054,13 @@ body, .container, h1, h2, h3, h4, h5, h6, p, button, input, label, .rules-list, 
 }
 
 .voting-options h4 {
-    color: #ff6b35;
+    color: #8b0000;
     margin-bottom: 10px;
     font-family: 'Share Tech Mono', monospace;
 }
 
 .vote-btn {
-    background: #ff6b35;
+    background: #8b0000;
     color: white;
     border: none;
     padding: 8px 16px;
@@ -1072,7 +1072,7 @@ body, .container, h1, h2, h3, h4, h5, h6, p, button, input, label, .rules-list, 
 }
 
 .vote-btn:hover {
-    background: #e55a2b;
+    background: #8b0000;
 }
 
 .voting-results {
@@ -1097,7 +1097,7 @@ body, .container, h1, h2, h3, h4, h5, h6, p, button, input, label, .rules-list, 
     font-family: 'Share Tech Mono', monospace;
     padding: 5px 10px;
     margin: 5px 0;
-    background: rgba(255, 107, 53, 0.1);
+    background: rgba(139, 0, 0, 0.1);
     border-radius: 3px;
     color: #fff;
 }
@@ -1112,7 +1112,7 @@ body, .container, h1, h2, h3, h4, h5, h6, p, button, input, label, .rules-list, 
     width: 100%;
     padding: 12px;
     margin: 10px 0;
-    border: 1px solid #ff6b35;
+    border: 1px solid #8b0000;
     border-radius: 5px;
     background: #2d2d2d;
     color: #fff;
