@@ -84,18 +84,20 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Always show profession
             if (player.profession) {
-                characteristics += `<div class="characteristic">👨‍💼 Profession: ${player.profession}</div>`;
+                characteristics += `<div class="characteristic">👨‍💼 Профессия: ${player.profession}</div>`;
             }
             
             // Show other characteristics only if revealed
             if (player.gender && player.isGenderRevealed) {
                 characteristics += `<div class="characteristic">👤 Пол: ${player.gender}</div>`;
             }
+            if (player.gender && player.isGenderRevealed) {
+                characteristics += `<div class="characteristic">👤 Пол: ${player.gender}</div>`;
+                characteristics += `<div class="characteristic">💕 Ориентация: ${player.orientation}</div>`;
+                characteristics += `<div class="characteristic">👶 Репродуктивный статус: ${player.reproductiveStatus}</div>`;
+            }
             if (player.age && player.isAgeRevealed) {
                 characteristics += `<div class="characteristic">🎂 Возраст: ${player.age}</div>`;
-            }
-            if (player.orientation && player.isOrientationRevealed) {
-                characteristics += `<div class="characteristic">💕 Ориентация: ${player.orientation}</div>`;
             }
             if (player.hobby && player.isHobbyRevealed) {
                 characteristics += `<div class="characteristic">🎯 Хобби: ${player.hobby}</div>`;
@@ -115,9 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (player.health && player.isHealthRevealed) {
                 characteristics += `<div class="characteristic">🏥 Здоровье: ${player.health}</div>`;
             }
-            if (player.personality && player.isPersonalityRevealed) {
-                characteristics += `<div class="characteristic">🧠 Личность: ${player.personality}</div>`;
-            }
+            
             
             playerCard.innerHTML = characteristics;
             playersList.appendChild(playerCard);
@@ -206,19 +206,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 const player = data.data.players.find(p => p.nickname === currentNickname);
                 // List of all characteristics with values
                 const allCharacteristics = [
-                    { value: 'gender', label: 'Gender', revealed: player.isGenderRevealed, val: player.gender },
-                    { value: 'age', label: 'Age', revealed: player.isAgeRevealed, val: player.age },
-                    { value: 'orientation', label: 'Orientation', revealed: player.isOrientationRevealed, val: player.orientation },
-                    { value: 'hobby', label: 'Hobby', revealed: player.isHobbyRevealed, val: player.hobby },
-                    { value: 'phobia', label: 'Phobia', revealed: player.isPhobiaRevealed, val: player.phobia },
-                    { value: 'luggage', label: 'Luggage', revealed: player.isLuggageRevealed, val: player.luggage },
-                    { value: 'additionalinfo', label: 'Additional Information', revealed: player.isAdditionalInfoRevealed, val: player.additionalInformation },
-                    { value: 'bodytype', label: 'Body Type', revealed: player.isBodyTypeRevealed, val: player.bodyType },
-                    { value: 'health', label: 'Health', revealed: player.isHealthRevealed, val: player.health },
-                    { value: 'personality', label: 'Personality', revealed: player.isPersonalityRevealed, val: player.personality }
+                    { value: 'gender', label: 'Пол, ориентация и репродуктивный статус', revealed: player.isGenderRevealed, val: `${player.gender}; ${player.orientation}; ${player.reproductiveStatus}` },
+                    { value: 'age', label: 'Возраст', revealed: player.isAgeRevealed, val: player.age },
+                    { value: 'hobby', label: 'Хобби', revealed: player.isHobbyRevealed, val: player.hobby },
+                    { value: 'phobia', label: 'Фобия', revealed: player.isPhobiaRevealed, val: player.phobia },
+                    { value: 'luggage', label: 'Багаж', revealed: player.isLuggageRevealed, val: player.luggage },
+                    { value: 'additionalinfo', label: 'Дополнительная информация', revealed: player.isAdditionalInfoRevealed, val: player.additionalInformation },
+                    { value: 'bodytype', label: 'Тип тела', revealed: player.isBodyTypeRevealed, val: player.bodyType },
+                    { value: 'health', label: 'Здоровье', revealed: player.isHealthRevealed, val: player.health },
+                    
                 ];
                 // Оставляем только нераскрытые
-                characteristicSelect.innerHTML = '<option value="">Select characteristic</option>';
+                characteristicSelect.innerHTML = '<option value="">Выберите характеристику</option>';
                 allCharacteristics.forEach(c => {
                     if (!c.revealed) {
                         const opt = document.createElement('option');

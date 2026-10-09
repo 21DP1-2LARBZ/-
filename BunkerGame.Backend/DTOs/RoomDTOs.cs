@@ -38,6 +38,7 @@ public class RoomPlayerDto
     // Player traits (only those that are revealed)
     public string? Profession { get; set; }
     public string? Gender { get; set; }
+    public string? ReproductiveStatus { get; set; }
     public int? Age { get; set; }
     public string? Orientation { get; set; }
     public string? Hobby { get; set; }
@@ -46,7 +47,8 @@ public class RoomPlayerDto
     public string? AdditionalInformation { get; set; }
     public string? BodyType { get; set; }
     public string? Health { get; set; }
-    public string? Personality { get; set; }
+    
+    
     
     // Trait reveal flags
     public bool IsProfessionRevealed { get; set; }
@@ -59,7 +61,7 @@ public class RoomPlayerDto
     public bool IsAdditionalInfoRevealed { get; set; }
     public bool IsBodyTypeRevealed { get; set; }
     public bool IsHealthRevealed { get; set; }
-    public bool IsPersonalityRevealed { get; set; }
+    
 }
 
 public class VoteDto

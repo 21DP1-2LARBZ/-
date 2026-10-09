@@ -1172,3 +1172,6 @@ body, .container, h1, h2, h3, h4, h5, h6, p, button, input, label, .rules-list, 
     border: 1px solid #fff;
     text-align: center;
 }
+#userPanel {
+    display: none !important;
+}

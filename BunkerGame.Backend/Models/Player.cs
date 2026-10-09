@@ -26,8 +26,10 @@ public class Player
     public string BodyType { get; set; } = default!;
     
     public string Health { get; set; } = default!;
+
+    public string ReproductiveStatus { get; set; } = string.Empty;
     
-    public string Personalitie { get; set; } = default!;
+
     
 }
 
