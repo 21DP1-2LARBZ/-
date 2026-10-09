@@ -54,6 +54,10 @@ using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
 
+    // Сначала создать или обновить таблицы базы данных
+    db.Database.Migrate();
+
+    // Затем добавить новый столбец в уже существующую таблицу Players
     try
     {
         db.Database.ExecuteSqlRaw(
@@ -63,15 +67,8 @@ using (var scope = app.Services.CreateScope())
         ex.SqliteErrorCode == 1 &&
         ex.Message.Contains("duplicate column name"))
     {
-        // Столбец уже существует — ничего делать не нужно.
+        // Столбец уже существует.
     }
-}
-
-// Apply migrations on startup (creates/updates SQLite DB)
-using (var scope = app.Services.CreateScope())
-{
-    var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-    db.Database.Migrate();
 }
 
 // Configure the HTTP request pipeline.
