@@ -1,6 +1,7 @@
 using BunkerGame.Backend.Services;
 using BunkerGame.Backend.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Data.Sqlite;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -49,6 +50,22 @@ if (!builder.Environment.IsProduction())
     builder.Services.AddHostedService<BackupService>();
 
 var app = builder.Build();
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+
+    try
+    {
+        db.Database.ExecuteSqlRaw(
+            "ALTER TABLE Players ADD COLUMN ReproductiveStatus TEXT NOT NULL DEFAULT ''");
+    }
+    catch (SqliteException ex) when (
+        ex.SqliteErrorCode == 1 &&
+        ex.Message.Contains("duplicate column name"))
+    {
+        // Столбец уже существует — ничего делать не нужно.
+    }
+}
 
 // Apply migrations on startup (creates/updates SQLite DB)
 using (var scope = app.Services.CreateScope())
