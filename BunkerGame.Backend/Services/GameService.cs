@@ -225,7 +225,8 @@ private string CreateReproductiveStatus(string gender)
             BodyType = BodyTypes[_random.Next(BodyTypes.Length)],
             Phobia = Phobias[_random.Next(Phobias.Length)],
             Luggage = Luggaages[_random.Next(Luggaages.Length)],
-            AdditionalInformation = AdditionalInformations[_random.Next(AdditionalInformations.Length)] 
+            AdditionalInformation = AdditionalInformations[_random.Next(AdditionalInformations.Length)],
+            Personalitie = "Не используется"
             
             
         };
