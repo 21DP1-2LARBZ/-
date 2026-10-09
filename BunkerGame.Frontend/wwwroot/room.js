@@ -88,9 +88,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             // Show other characteristics only if revealed
-            if (player.gender && player.isGenderRevealed) {
-                characteristics += `<div class="characteristic">👤 Пол: ${player.gender}</div>`;
-            }
+            
+            
             if (player.gender && player.isGenderRevealed) {
                 characteristics += `<div class="characteristic">👤 Пол: ${player.gender}</div>`;
                 characteristics += `<div class="characteristic">💕 Ориентация: ${player.orientation}</div>`;
